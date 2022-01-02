@@ -1,10 +1,3 @@
-<style>
-img {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-</style>
-
 # Food Chain T-SQL Database
 
 >This is a T-SQL database course in the vocational studies of .NET Developer in Teknikhögskolan, Göteborg.
@@ -19,6 +12,8 @@ img {
 
 ### Get product with name, price and discount inclusive/exclusive
 
+<br>
+
 ```SQL
 SELECT Name,
 Price ,
@@ -28,9 +23,15 @@ FROM Product
 ORDER BY FixedDiscount DESC, Product.Name
 ```
 
+<br>
+
 ![result1](2022-01-02-13-55-34.png)
 
+<br>
+
 ### Get opening hours per day and store
+
+<br>
 
 ```SQL
 SELECT Street, 
@@ -49,10 +50,15 @@ FROM Store
 JOIN OpeningHours ON Store.ID = OpeningHours.StoreID
 ORDER BY Street, OpeningHours.Day
 ```
+<br>
 
 ![result2](2022-01-02-13-56-30.png)
 
+<br>
+
 ### Get customer with products and sum before discount
+
+<br>
 
 ```SQL
 SELECT
@@ -74,9 +80,15 @@ GROUP BY [Order].ID, FirstName, LastName, [DateTime]
 ORDER BY [DateTime] DESC
 ```
 
+<br>
+
 ![result3](2022-01-02-13-57-11.png)
 
+<br>
+
 ### Opening hours per employee and store
+
+<br>
 
 ```SQL
 SELECT Employee.FirstName, Store.Street, OpeningTime, ClosingTime
@@ -86,10 +98,13 @@ On Employee.StoreID = Store.ID
 JOIN OpeningHours
 On Store.ID = OpeningHours.StoreID
 ```
+<br>
 
 ## Triggers
 
 ### One Shift per worker and day
+
+<br>
 
 ```SQL
 CREATE TRIGGER TR_OneShiftPerDay
@@ -123,7 +138,11 @@ BEGIN
 END
 ```
 
+<br>
+
 ### Manager Limit trigger
+
+<br>
 
 ```SQL
 CREATE TRIGGER ManagerLimit
